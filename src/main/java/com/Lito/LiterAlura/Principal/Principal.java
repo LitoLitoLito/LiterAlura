@@ -73,8 +73,8 @@ public class Principal {
                         generarEstadisticas();
                         break;
                     case 0:
-                        System.out.println("Gracias por utilizar Literalura ✔\uFE0F");
-                        System.out.println("Cerrando la aplicacion Literalura \uD83D\uDCD3 ...");
+                        System.out.println("Gracias por utilizar Literalura ✔");
+                        System.out.println("Cerrando la aplicacion Literalura ...");
                         break;
                     default:
                         System.out.println("OPCIÓN NO VÁLIDA!");
@@ -105,7 +105,7 @@ public class Principal {
                     .findFirst();
             if (libroBuscado.isPresent()) {
                 System.out.println(
-                        "\n*************** LIBRO \uD83D\uDCD9  ***************" +
+                        "\n*************** LIBRO ***************" +
                                 "\nTítulo: " + libroBuscado.get().titulo() +
                                 "\nAutor: " + libroBuscado.get().autores().stream()
                                 .map(a -> a.nombre()).limit(1).collect(Collectors.joining()) +
@@ -177,7 +177,7 @@ public class Principal {
                      """);
         List<Libro> libros = repository.buscarTodosLosLibros();
         libros.forEach(l -> System.out.println(
-                "******* LIBRO \uD83D\uDCD9  *******" +
+                "******* LIBRO *******" +
                         "\nTítulo: " + l.getTitulo() +
                         "\nAutor: " + l.getAutor().getNombre() +
                         "\nIdioma: " + l.getIdioma().getIdioma() +
@@ -282,7 +282,7 @@ public class Principal {
             } else {
                 System.out.println();
                 libros.forEach(l -> System.out.println(
-                        "*********** LIBRO \uD83D\uDCD9  ***********" +
+                        "*********** LIBRO ***********" +
                                 "\nTítulo: " + l.getTitulo() +
                                 "\nAutor: " + l.getAutor().getNombre() +
                                 "\nIdioma: " + l.getIdioma().getIdioma() +
@@ -388,7 +388,7 @@ public class Principal {
         List<Libro> libros = repository.top10Libros();
         System.out.println();
         libros.forEach(l -> System.out.println(
-                "----------------- LIBRO \uD83D\uDCD9  ----------------" +
+                "******************** LIBRO  ********************" +
                         "\nTítulo: " + l.getTitulo() +
                         "\nAutor: " + l.getAutor().getNombre() +
                         "\nIdioma: " + l.getIdioma().getIdioma() +
@@ -408,7 +408,7 @@ public class Principal {
                 .filter(l -> l.descargas() > 0)
                 .collect(Collectors.summarizingInt(DatosLibro::descargas));
         Integer media = (int) est.getAverage();
-        System.out.println("\n********** ESTADÍSTICAS \uD83D\uDCCA **********");
+        System.out.println("\n********** ESTADÍSTICAS **********");
         System.out.println("Media de descargas: " + media);
         System.out.println("Máxima de descargas: " + est.getMax());
         System.out.println("Mínima de descargas: " + est.getMin());
